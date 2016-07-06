@@ -1,4 +1,3 @@
-__author__ = 'Eric'
 from pyspark.mllib.regression import LabeledPoint
 from pyspark.mllib.feature import HashingTF
 from pyspark.mllib.classification import LogisticRegressionWithSGD
@@ -32,5 +31,6 @@ model = LogisticRegressionWithSGD.train(trainingData)
 # the same HashingTF feature transformation to get vectors, then apply the model.
 posTest = tf.transform("O M G GET cheap stuff by sending money to ...".split(" "))
 negTest = tf.transform("Hi Dad, I started studying Spark the other ...".split(" "))
-print "Prediction for positive test example: %g" % model.predict(posTest)
-print "Prediction for negative test example: %g" % model.predict(negTest)
+
+print "Prediction for positive test example: {}".format(model.predict(posTest))
+print "Prediction for negative test example: {}".format(model.predict(negTest))
